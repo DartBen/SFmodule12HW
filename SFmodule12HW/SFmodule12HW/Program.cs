@@ -3,7 +3,7 @@ using System.Reflection.Metadata;
 
 internal class Program
 {
-    
+
     private static void Main(string[] args)
     {
 
@@ -11,17 +11,17 @@ internal class Program
 
         users.AddUser();
 
-        int nubmer=0;
-        bool parsed=false;
+        int nubmer = 0;
+        bool parsed = false;
         while (!parsed)
         {
             Console.WriteLine("Введите порядковый номер");
             parsed = int.TryParse(Console.ReadLine(), out nubmer);
         }
 
-        if ( !users.GetIsPremium(nubmer-1))
+        Console.WriteLine($"Приветствуем {users.GetName}!");
+        if (!users.GetIsPremium(nubmer - 1))
         {
-            Console.WriteLine($"Приветствуем {users.GetName}!");
             UserList.ShowAds();
         }
     }
